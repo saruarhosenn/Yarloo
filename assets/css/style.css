@@ -1,0 +1,756 @@
+
+/*
+--------------------------------------------
+--------------------------------------------
+  Theme Name: 
+  Author: 
+  Description: 
+  Version: 1.0.0
+--------------------------------------------
+--------------------------------------------
+*/
+
+
+/*
+-------------------------------------
+-------------------------------------
+CSS Index
+
+01.
+02.
+03.
+04.
+-------------------------------------
+-------------------------------------
+*/
+
+/* 
+=====================================
+Variables
+=====================================
+*/
+:root {
+	--primary-font-700: 'Poppins-700';
+	--primary-font-500: 'Poppins-500';
+	--primary-font-400: 'Poppins-400';
+	--size-xl: 10rem;
+	--size-lg: 6.9rem;
+	--size-md: 4.2rem;
+	--primary-color: #ffd800;
+	--secondary-color: #FFFFFF;
+}
+
+/* 
+=====================================
+Variables
+=====================================
+*/
+
+html {
+	font-size: 62.5%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+
+body {
+	font-family: var(--primary-font-400);
+	color: var(--secondary-color);
+	background-color: #000000;
+	line-height: 1.5;
+	letter-spacing: .1rem;
+	overflow-x: hidden;
+}
+
+/* 
+==================================
+Bacic Setup
+==================================
+*/
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+::-moz-selection {
+	background-color: #212529;
+	color: var(--secondary-color);
+}
+
+::selection {
+	background-color: #212529;
+	color: var(--secondary-color);
+}
+
+::-webkit-scrollbar {
+	width: .7rem;
+}
+
+::-webkit-scrollbar-track {
+	background-color: var(--primary-color);
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #212529;
+	height: 6rem;
+}
+
+section {
+	overflow-x: hidden;
+}
+
+a,
+span,
+label {
+	display: inline-block;
+}
+
+ul li {
+	list-style: none
+}
+
+a,
+a:focus {
+	text-decoration: none;
+}
+
+button:focus,
+input:focus,
+textarea:focus,
+button,
+input,
+textarea {
+	outline: 0;
+	border: 0;
+}
+
+button {
+	cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+hr {
+	margin: 0;
+	padding: 0;
+	background-color: transparent;
+}
+
+hr {
+	opacity: 1;
+	background-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--primary-font-700);
+	color: var(--primary-color);
+}
+
+p {
+	font-family: var(--primary-font-400);
+	font-size: var(--size-md);
+	color: var(--secondary-color);
+	line-height: 1.3;
+}
+
+.transition-linear {
+	-webkit-transition: all 0.4s linear;
+	-o-transition: all 0.4s linear;
+	transition: all 0.4s linear;
+}
+
+a,
+button,
+img,
+.transition-ease-in-out {
+	-webkit-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+/* page loader  */
+#preloader {
+	position: fixed;
+	background: #fff;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 99999;
+	height: 100vh;
+	width: 100vw;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+.loader3 {
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+	padding: 0px;
+	text-align: left;
+}
+
+.loader3 span {
+	position: absolute;
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+	background: #ffd800;
+	-webkit-animation: loader3 1.5s linear infinite;
+	animation: loader3 1.5s linear infinite;
+}
+
+.loader3 span:last-child {
+	animation-delay: -0.9s;
+	-webkit-animation-delay: -0.9s;
+}
+
+@keyframes loader3 {
+  	0% {
+    	-webkit-transform: scale(0, 0);
+    	        transform: scale(0, 0);
+    	opacity: 0.8;
+  	}
+  	100% {
+    	-webkit-transform: scale(1, 1);
+    	        transform: scale(1, 1);
+    	opacity: 0;
+  	}
+}
+
+@-webkit-keyframes loader3 {
+  	0% {
+    	-webkit-transform: scale(0, 0);
+    	opacity: 0.8;
+  	}
+  	100% {
+    	-webkit-transform: scale(1, 1);
+    	opacity: 0;
+  	}
+}
+
+/* 
+================================================
+================================================
+Start Reuseble Components
+================================================
+*/
+.section-title-xl {
+	font-size: var(--size-xl);
+}
+
+.section-title-lg {
+	font-size: var(--size-lg);
+}
+
+.img-btn:hover {
+	-webkit-transform: scale(.9);
+	    -ms-transform: scale(.9);
+	        transform: scale(.9);
+}
+
+/* 
+================================================
+End Reuseble Components
+================================================
+================================================
+*/
+
+
+/* 
+=========================================
+Start Header Section
+=========================================
+*/
+header {
+	background: url(../images/header/header-bg.png) no-repeat center top / cover;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 12.5rem;
+	z-index: 999;
+}
+
+header nav {
+	height: 100%;
+}
+
+nav .logo img {
+	max-width: 19rem;
+	position: relative;
+	z-index: 99999;
+}
+
+nav .main-menu ul li:not(:last-child) {
+	margin-right: 4.5rem;
+}
+
+nav .main-menu ul li a {
+	font-family: var(--primary-font-500);
+	color: #332c29;
+	font-size: 3rem;
+}
+
+/*
+--------------------
+Hamburger Menu Btn
+--------------------
+*/
+.menu-toggle-btn {
+	position: relative;
+	cursor: pointer;
+	z-index: 99999;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+	width: 3.5rem;
+	height: .5rem;
+	background: #332c29;
+	margin: .6rem 0;
+}
+
+.change .bar1 {
+	-webkit-transform: rotate(-45deg) translate(-9px, 6px);
+	-ms-transform: rotate(-45deg) translate(-9px, 6px);
+	transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+	opacity: 0;
+}
+
+.change .bar3 {
+	-webkit-transform: rotate(45deg) translate(-10px, -7px);
+	-ms-transform: rotate(45deg) translate(-10px, -7px);
+	transform: rotate(45deg) translate(-10px, -7px);
+}
+/* 
+=========================================
+End Header Section
+=========================================
+*/
+
+
+/* 
+=========================================
+Start Hero Section
+=========================================
+*/
+.hero-section {
+	background: url(../images/hero/hero-bg.png) no-repeat top / cover;
+	min-height: 100vh;
+}
+
+.hero-content .hero-title {
+	font-size: 7.2rem;
+	line-height: 1.2;
+}
+
+.hero-content p {
+	font-size: 3.2rem;
+}
+
+/* 
+=========================================
+End Hero Section
+=========================================
+*/
+
+
+/* 
+=========================================
+Start Products Section
+=========================================
+*/
+.products-section {
+	position: relative;
+	z-index: 11;
+	margin-top: -16rem;
+	background: url(../images/products/products-bg.png) no-repeat center / cover;
+	padding: 25rem 0;
+}
+
+.products-item .products-item-text h3 {
+	font-size: 4.8rem;
+}
+
+.products-item .products-item-text p {
+	font-size: 2.5rem;
+}
+
+/* 
+=========================================
+End Products Section
+=========================================
+*/
+
+
+/* 
+=========================================
+Start Packs Section
+=========================================
+*/
+.packs-section {
+	position: relative;
+	z-index: 1;
+	margin-top: -14rem;
+}
+
+.packs-title {
+	position: absolute;
+	top: 6%;
+	left: 50%;
+	-webkit-transform: translateX(-50%);-ms-transform: translateX(-50%);transform: translateX(-50%);
+}
+
+.packs-img img {
+	width: 100%;
+	height: 100%
+}
+
+/* 
+=========================================
+End Packs Section
+=========================================
+*/
+
+
+/* 
+============================================
+Start About, Chest, Metacurse Section
+============================================
+*/
+.about-section,
+.chest-section,
+.metacurse-section {
+	background: no-repeat center / cover;
+	min-height: 100vh;
+}
+
+.about-section {
+	margin-top: -10.8rem;
+	background-image: url(../images/about/about-bg.png);
+}
+
+.chest-section {
+	background-image: url(../images/chest/chest-bg.png);
+}
+
+.metacurse-section {
+	background-image: url(../images/metacurse/metacurse-bg.png);
+}
+
+.chest-content {
+	padding-left: 2rem;
+}
+
+/* 
+============================================
+End About, Chest, Metacurse Section
+============================================
+*/
+
+
+/* 
+=========================================
+Start Powered Section
+=========================================
+*/
+.powered-row {
+	margin-left: -2.5rem;
+	margin-right: -2.5rem;
+}
+
+.powered-row>* {
+	padding-left: 2.5rem;
+	padding-right: 2.5rem;
+	margin-bottom: 7rem;
+}
+
+.powered-content>img {
+	margin-bottom: 12rem;
+}
+
+.powered-text-logo {
+	margin: 15rem 0 16.5rem;
+}
+
+/* 
+=========================================
+End Powered Section
+=========================================
+*/
+
+
+/* 
+=========================================
+Start Team Section
+=========================================
+*/
+.team-section {
+	background: url(../images/team/team-bg.png) no-repeat center / cover;
+	padding: 25rem 0;
+}
+
+.slider-px {
+	padding: 0 6rem;
+	position: relative;
+}
+
+.team-slider {
+	overflow-x: hidden;
+	padding-top: 1.3rem;
+}
+
+.team {
+	background: url(../images/team/team-person-bg.png) no-repeat center / cover;
+	padding: 7rem 5.5rem;
+}
+
+.team .team-info :is(h3, p) {
+	color: #000000;
+}
+
+.team .team-info h3 {
+	font-size: 4.8rem;
+	margin: 2rem 0 .5rem;
+}
+
+.team .team-info p {
+	font-size: 3.8rem;
+}
+
+.team-slider-btn {
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	z-index: 11;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+}
+
+.slider-prev,
+.slider-next {
+	width: 0;
+	height: 0;
+	border-style: solid;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.slider-prev {
+	
+	border-width: 20px 40px 20px 0;
+	border-color: transparent var(--secondary-color) transparent transparent;
+}
+
+.slider-next {
+	border-width: 20px 0 20px 40px;
+	border-color: transparent transparent transparent var(--secondary-color);
+	
+}
+/* 
+=========================================
+End Team Section
+=========================================
+*/
+
+
+/* 
+=========================================
+Start Message Section
+=========================================
+*/
+.message-section {
+	position: relative;
+	min-height: 100vh;
+}
+
+.message-section::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(transparent));
+	background: -o-linear-gradient(rgba(0, 0, 0, 0.7), transparent);
+	background: linear-gradient(rgba(0, 0, 0, 0.7), transparent);
+}
+
+.message-top-logo,
+.message-content {
+	position: relative;
+	z-index: 11;
+}
+
+.message-bg {
+	background: url(../images/message/message-bg.png) no-repeat center / cover;
+	min-height: 100vh;
+}
+
+.message-content {
+	max-width: 166.5rem;
+}
+
+.message-content h3 {
+	font-size: 5.8rem;
+}
+
+.message-content p {
+	text-transform: uppercase;
+	margin: 11.5rem 0 7rem;
+}
+/* 
+=========================================
+End Message Section
+=========================================
+*/
+
+
+/* 
+=========================================
+Start Space Top & Bottom Section
+=========================================
+*/
+.spaceY-section {
+	background-color: #000000;
+	padding: 6rem;
+}
+/* 
+=========================================
+End Space Top & Bottom Section
+=========================================
+*/
+
+
+/* 
+=========================================
+Start Footer Section
+=========================================
+*/
+footer {
+	background: url(../images/footer/footer-bg.png) no-repeat center / cover;
+	height: 12.5rem;
+}
+
+footer > duv {
+	height: 100%;
+}
+
+.copyright-text p {
+	color: #332c29;
+	font-size: 2rem;
+	font-family: var(--primary-font-500);
+}
+/* 
+=========================================
+End Footer Section
+=========================================
+*/
+
+
+/* 
+===============================
+Back to top Btn
+===============================
+*/
+#scroll-up-btn {
+	opacity: 0;
+	position: fixed;
+	bottom: 3rem;
+	right: 3rem;
+	z-index: 99;
+	background: var(--primary-color);
+	width: 4.5rem;
+	height: 4.5rem;
+	-webkit-animation: myBtn 3.5s infinite linear;
+	animation: myBtn 3.5s infinite linear
+}
+
+@-webkit-keyframes myBtn {
+	0% {
+		right: 3rem;
+		bottom: 4rem;
+	}
+
+	25% {
+		bottom: 2rem;
+		right: 3rem;
+	}
+
+	50% {
+		right: 3rem;
+		bottom: 4rem;
+	}
+
+	75% {
+		bottom: 2rem;
+		right: 3rem;
+	}
+
+	100% {
+		right: 3rem;
+		bottom: 4rem;
+	}
+}
+
+@keyframes myBtn {
+	0% {
+		right: 3rem;
+		bottom: 4rem;
+	}
+
+	25% {
+		bottom: 2rem;
+		right: 3rem;
+	}
+
+	50% {
+		right: 3rem;
+		bottom: 4rem;
+	}
+
+	75% {
+		bottom: 2rem;
+		right: 3rem;
+	}
+
+	100% {
+		right: 3rem;
+		bottom: 4rem;
+	}
+}
